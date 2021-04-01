@@ -6,6 +6,7 @@ const initialState = {
   email: '',
   message: '',
 }
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState)
 
@@ -13,6 +14,7 @@ export const Contact = (props) => {
     const { name, value } = e.target
     setState((prevState) => ({ ...prevState, [name]: value }))
   }
+
   const clearState = () => setState({ ...initialState })
 
   const handleSubmit = (e) => {

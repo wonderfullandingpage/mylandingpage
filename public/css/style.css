@@ -578,3 +578,7 @@ color: #777;
 	margin: 50px 0;
 }
 }
+
+.cursor{
+	cursor: pointer;
+}

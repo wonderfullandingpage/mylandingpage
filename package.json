@@ -12,11 +12,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.2",
+    "react-simple-image-viewer": "^0.0.8",
     "smooth-scroll": "^16.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node script.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
