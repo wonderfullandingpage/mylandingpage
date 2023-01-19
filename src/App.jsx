@@ -1,14 +1,9 @@
-import { useState, useEffect } from 'react'
-import { Navigation } from './components/navigation'
-import { Header } from './components/header'
-import { Features } from './components/features'
-import { About } from './components/about'
-import { Services } from './components/services'
-import { Gallery } from './components/gallery'
-import { Testimonials } from './components/testimonials'
-import { Footer } from './components/footer'
-import JsonData from './data/data.json'
-import SmoothScroll from 'smooth-scroll'
+import SmoothScroll from "smooth-scroll"
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import ScrollOnTop from "./utils/ScrollOnTop"
+import Home from "./pages/home"
+
+import "animate.css/animate.min.css"
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -16,21 +11,15 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 })
 
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({})
-  useEffect(() => {
-    setLandingPageData(JsonData)
-  }, [])
-
   return (
     <div>
-      <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
-      <Services data={landingPageData.Services} />
-      <Gallery />
-      <Testimonials data={landingPageData.Testimonials} />
-      <Footer />
+      <Router>
+        <ScrollOnTop>
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </ScrollOnTop>
+      </Router>
     </div>
   )
 }
