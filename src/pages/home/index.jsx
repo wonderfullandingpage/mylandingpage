@@ -1,0 +1,33 @@
+import React, {useEffect, useState} from "react"
+import {About} from "../../components/about"
+import {Features} from "../../components/features"
+import {Footer} from "../../components/footer"
+import {Gallery} from "../../components/gallery"
+import {Header} from "../../components/header"
+import {Navigation} from "../../components/navigation"
+import {Services} from "../../components/services"
+import {Testimonials} from "../../components/testimonials"
+import JsonData from "../../data/data.json"
+
+function Home() {
+  const [landingPageData, setLandingPageData] = useState({})
+
+  useEffect(() => {
+    setLandingPageData(JsonData)
+  }, [])
+
+  return (
+    <div>
+      <Navigation />
+      <Header data={landingPageData.Header} />
+      <Features data={landingPageData.Features} />
+      <About data={landingPageData.About} />
+      <Services data={landingPageData.Services} />
+      <Gallery />
+      <Testimonials data={landingPageData.Testimonials} />
+      <Footer />
+    </div>
+  )
+}
+
+export default Home
