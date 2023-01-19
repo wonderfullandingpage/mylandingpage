@@ -75,7 +75,11 @@ hr {
   padding: 15px;
   transition: all 0.8s;
 }
-#menu.navbar-default {
+#menu.active-false {
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+}
+#menu.active-true {
   background-color: #fff;
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
