@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import {About} from "../../components/about"
+import {Contact} from "../../components/contact"
 import {Features} from "../../components/features"
 import {Footer} from "../../components/footer"
 import {Gallery} from "../../components/gallery"
@@ -25,6 +26,7 @@ function Home() {
       <Services data={landingPageData.Services} />
       <Gallery />
       <Testimonials data={landingPageData.Testimonials} />
+      <Contact data={landingPageData.Contact} />
       <Footer />
     </div>
   )
