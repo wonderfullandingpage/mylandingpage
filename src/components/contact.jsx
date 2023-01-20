@@ -2,6 +2,7 @@ import {useState} from "react"
 import emailjs from "emailjs-com"
 import InputSimple from "./elements/inputs/input"
 import {AnimationOnScroll} from "react-animation-on-scroll"
+import {useAlert} from "react-alert"
 
 const initialState = {
   name: "",
@@ -10,6 +11,7 @@ const initialState = {
 }
 
 export const Contact = (props) => {
+  const alert = useAlert()
   const [{name, email, message}, setState] = useState(initialState)
 
   const handleChange = (e) => {
@@ -31,10 +33,12 @@ export const Contact = (props) => {
       )
       .then(
         (result) => {
-          console.log(result.text)
+          console.log("result.text", result.text)
+          alert.success("Message sent, we will get back to you shortly")
           clearState()
         },
         (error) => {
+          alert.error("An error occurred, Please try again")
           console.log(error.text)
         }
       )

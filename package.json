@@ -11,6 +11,8 @@
     "emailjs-com": "^2.6.4",
     "particles-bg": "^2.5.5",
     "react": "^17.0.1",
+    "react-alert": "^7.0.3",
+    "react-alert-template-basic": "^1.0.2",
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "^17.0.1",
     "react-router": "^6.7.0",
