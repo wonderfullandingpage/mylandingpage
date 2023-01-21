@@ -67,28 +67,6 @@ export const Navigation = (props) => {
                 Testimonials
               </a>
             </li>
-            <li>
-              <div className='dropdown'>
-                <button
-                  className='btn btn-secondary dropdown-toggle'
-                  type='button'
-                  id='dropdownMenuButton'
-                  data-toggle='dropdown'
-                  aria-haspopup='true'
-                  aria-expanded='false'
-                >
-                  Dropdown button
-                </button>
-                <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                  <p className='dropdown-item' href='#213' style={{margin: "auto", width: "50%"}}>
-                    <i className='bi bi-flag'></i> Español
-                  </p>
-                  <p className='dropdown-item' href='#2123' style={{margin: "auto", width: "50%"}}>
-                    <i className='bi bi-flag-fill'></i> English
-                  </p>
-                </div>
-              </div>
-            </li>
           </ul>
         </div>
       </div>

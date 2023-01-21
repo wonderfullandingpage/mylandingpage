@@ -2,7 +2,7 @@ import SmoothScroll from "smooth-scroll"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import {transitions, positions, Provider as AlertProvider} from "react-alert"
 import AlertTemplate from "react-alert-template-basic"
-
+import "../src/assets/styles/styles.scss"
 import ScrollOnTop from "./utils/ScrollOnTop"
 import Home from "./pages/home"
 
