@@ -156,7 +156,7 @@ hr {
 .section-title h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: $primaryGradient;
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -171,7 +171,7 @@ hr {
   text-transform: uppercase;
   color: #fff;
   background-color: #5ca9fb;
-  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background-image: $primaryGradient;
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -300,7 +300,7 @@ header .intro-text {
 #about h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: $primaryGradient;
   height: 4px;
   width: 60px;
   bottom: 0;

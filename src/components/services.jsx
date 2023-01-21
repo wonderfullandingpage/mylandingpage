@@ -11,7 +11,7 @@ export const Services = (props) => {
         <div className='row'>
           {props.data
             ? props.data.map((d, i) => (
-                <AnimationOnScroll delay={i * 250} animateOnce animateIn='animate__fadeInTopLeft'>
+                <AnimationOnScroll delay={i * 150} animateOnce animateIn='animate__fadeInTopLeft'>
                   <div key={`${d.name}-${i}`} className='col-md-4'>
                     <i className={d.icon}></i>
                     <div className='service-desc'>

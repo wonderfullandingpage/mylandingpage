@@ -11,7 +11,7 @@ export const Features = (props) => {
           {props.data
             ? props.data.map((d, i) => (
                 <AnimationOnScroll
-                  delay={i * 130}
+                  delay={i * 100}
                   animateOnce
                   animateIn='animate__fadeInBottomRight'
                 >
