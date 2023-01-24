@@ -1,12 +1,12 @@
 import SmoothScroll from "smooth-scroll"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import {transitions, positions, Provider as AlertProvider} from "react-alert"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { transitions, positions, Provider as AlertProvider } from "react-alert"
 import AlertTemplate from "react-alert-template-basic"
-import "../src/assets/styles/styles.scss"
 import ScrollOnTop from "./utils/ScrollOnTop"
 import Home from "./pages/home"
 
 import "animate.css/animate.min.css"
+import { useEffect, useState } from "react"
 
 const options = {
   // you can also just use 'bottom center'
@@ -23,6 +23,21 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 })
 
 const App = () => {
+  const [bgBlack, setBgBlack] = useState(false)
+
+  useEffect(() => {
+    const myValue = localStorage.getItem("bgBlack")
+    console.log("myValue", typeof myValue)
+    setBgBlack(myValue === "true" ? true : false)
+    if (myValue === "true") {
+      console.log("trueee")
+      import("../src/assets/styles/stylesBlack.scss")
+    } else {
+      console.log("falseee")
+      import("../src/assets/styles/styles.scss")
+    }
+  }, [bgBlack])
+
   return (
     <div>
       <Router>
