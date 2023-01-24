@@ -1,4 +1,4 @@
-import {AnimationOnScroll} from "react-animation-on-scroll"
+import { AnimationOnScroll } from "react-animation-on-scroll"
 
 export const Services = (props) => {
   return (
@@ -11,7 +11,7 @@ export const Services = (props) => {
         <div className='row'>
           {props.data
             ? props.data.map((d, i) => (
-                <AnimationOnScroll delay={i * 150} animateOnce animateIn='animate__fadeInTopLeft'>
+                <AnimationOnScroll delay={i * 100} animateOnce animateIn='animate__fadeInTopLeft'>
                   <div key={`${d.name}-${i}`} className='col-md-4 col-xs-6 '>
                     <i className={d.icon}></i>
                     <div className='service-desc'>
