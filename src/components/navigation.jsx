@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-export const Navigation = (props) => {
-  const [navBarBackground, setNavBarBackgorund] = useState(false)
-  const [bgBlack, setBgBlack] = useState(false)
+export const Navigation = ({ theme, setTheme }) => {
+  const [navBarBackground, setNavBarBackgorund] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY >= 10) {
-      setNavBarBackgorund(true)
+      setNavBarBackgorund(true);
     } else {
-      setNavBarBackgorund(false)
+      setNavBarBackgorund(false);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground)
-
-    setBgBlack(localStorage.getItem("bgBlack") === "true" ? true : false)
+    window.addEventListener("scroll", changeBackground);
 
     return () => {
-      window.removeEventListener("scroll", changeBackground)
-    }
-  }, [])
-
-  const changeBg = async (value) => {
-    await localStorage.setItem("bgBlack", value)
-    setBgBlack(value)
-    window.location.reload()
-  }
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   return (
     <nav id='menu' className={`navbar  navbar-fixed-top active-${navBarBackground}`}>
@@ -84,13 +75,13 @@ export const Navigation = (props) => {
                   paddingBottom: "15px",
                 }}
               >
-                {!bgBlack ? (
-                  <div onClick={() => changeBg(true)}>
-                    <i class='fa fa-sun-o'></i>
+                {theme === "dark" ? (
+                  <div onClick={() => setTheme(theme === "dark" ? "white" : "dark")}>
+                    <i class='fa fa-moon-o'></i>
                   </div>
                 ) : (
-                  <div onClick={() => changeBg(false)}>
-                    <i class='fa fa-moon-o'></i>
+                  <div onClick={() => setTheme(theme === "dark" ? "white" : "dark")}>
+                    <i class='fa fa-sun-o'></i>
                   </div>
                 )}
               </div>
@@ -99,5 +90,5 @@ export const Navigation = (props) => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};

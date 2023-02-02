@@ -1,0 +1,29 @@
+@import "../styles/variables.scss";
+
+.App.dark {
+  background-color: $primaryGradientBlack;
+
+  #features,
+  #about,
+  #portfolio,
+  #testimonials,
+  #footer {
+    background: $backgroundPrimaryBlack;
+  }
+
+  #services,
+  #contact {
+    background: $primaryGradientBlack;
+  }
+
+  h3,
+  h2 {
+    opacity: 0.7;
+    color: $white;
+  }
+
+  p,
+  li {
+    color: $white;
+  }
+}

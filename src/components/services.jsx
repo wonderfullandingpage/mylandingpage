@@ -1,4 +1,4 @@
-import { AnimationOnScroll } from "react-animation-on-scroll"
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 export const Services = (props) => {
   return (
@@ -25,5 +25,5 @@ export const Services = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

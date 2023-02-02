@@ -1,12 +1,14 @@
-import SmoothScroll from "smooth-scroll"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { transitions, positions, Provider as AlertProvider } from "react-alert"
-import AlertTemplate from "react-alert-template-basic"
-import ScrollOnTop from "./utils/ScrollOnTop"
-import Home from "./pages/home"
+import SmoothScroll from "smooth-scroll";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+import ScrollOnTop from "./utils/ScrollOnTop";
+import Home from "./pages/home";
+import "./assets/styles/styles.scss";
+import "./assets/styles/stylesDark.scss";
 
-import "animate.css/animate.min.css"
-import { useEffect, useState } from "react"
+import "animate.css/animate.min.css";
+import { useEffect, useState } from "react";
 
 const options = {
   // you can also just use 'bottom center'
@@ -15,42 +17,39 @@ const options = {
   offset: "30px",
   // you can also just use 'scale'
   transition: transitions.SCALE,
-}
+};
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
-})
+});
 
 const App = () => {
-  const [bgBlack, setBgBlack] = useState(false)
+  const [Theme, setTheme] = useState("white");
+
+  //change variable local storage 'theme'
+  const changeTheme = (value) => {
+    localStorage.setItem("theme", value);
+    setTheme(value);
+  };
 
   useEffect(() => {
-    const myValue = localStorage.getItem("bgBlack")
-    console.log("myValue", typeof myValue)
-    setBgBlack(myValue === "true" ? true : false)
-    if (myValue === "true") {
-      console.log("trueee")
-      import("../src/assets/styles/stylesBlack.scss")
-    } else {
-      console.log("falseee")
-      import("../src/assets/styles/styles.scss")
-    }
-  }, [bgBlack])
+    setTheme(localStorage.getItem("theme") === "dark" ? "dark" : "white");
+  }, []);
 
   return (
-    <div>
+    <div className={`App ${Theme}`}>
       <Router>
         <ScrollOnTop>
           <AlertProvider template={AlertTemplate} {...options}>
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={<Home theme={Theme} setTheme={changeTheme} />} />
             </Routes>
           </AlertProvider>
         </ScrollOnTop>
       </Router>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
