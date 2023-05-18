@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.dd1f85f8.css",
+    "main.js": "./static/js/main.3e3b8af3.js",
+    "static/media/iphoneVideo.mp4": "./static/media/iphoneVideo.a674632983543964563d.mp4",
+    "index.html": "./index.html",
+    "main.dd1f85f8.css.map": "./static/css/main.dd1f85f8.css.map",
+    "main.3e3b8af3.js.map": "./static/js/main.3e3b8af3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd1f85f8.css",
+    "static/js/main.3e3b8af3.js"
+  ]
+}
