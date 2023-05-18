@@ -1,28 +1,28 @@
-import {useState} from "react"
-import emailjs from "emailjs-com"
-import InputSimple from "./elements/inputs/input"
-import {AnimationOnScroll} from "react-animation-on-scroll"
-import {useAlert} from "react-alert"
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import InputSimple from "./elements/inputs/input";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useAlert } from "react-alert";
 
-const initialState = {
+/* const initialState = {
   name: "",
   email: "",
   message: "",
-}
-
+};
+ */
 export const Contact = (props) => {
-  const alert = useAlert()
-  const [{name, email, message}, setState] = useState(initialState)
+  const alert = useAlert();
+  const [{ name, email, message }, setState] = useState(initialState);
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setState((prevState) => ({...prevState, [name]: value}))
-  }
+    const { name, value } = e.target;
+    setState((prevState) => ({ ...prevState, [name]: value }));
+  };
 
-  const clearState = () => setState({...initialState})
+  const clearState = () => setState({ ...initialState });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     emailjs
       .sendForm(
@@ -33,16 +33,16 @@ export const Contact = (props) => {
       )
       .then(
         (result) => {
-          console.log("result.text", result.text)
-          alert.success("Message sent, we will get back to you shortly")
-          clearState()
+          console.log("result.text", result.text);
+          alert.success("Message sent, we will get back to you shortly");
+          clearState();
         },
         (error) => {
-          alert.error("An error occurred, Please try again")
-          console.log(error.text)
+          alert.error("An error occurred, Please try again");
+          console.log(error.text);
         }
-      )
-  }
+      );
+  };
   return (
     <div>
       <div id='contact'>
@@ -185,5 +185,5 @@ export const Contact = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
