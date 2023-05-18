@@ -17,7 +17,7 @@
     "react-dom": "^17.0.1",
     "react-router": "^6.7.0",
     "react-router-dom": "^6.7.0",
-    "react-scripts": "^4.0.2",
+    "react-scripts": "^5.0.1",
     "react-simple-image-viewer": "^0.0.8",
     "sass": "^1.57.1",
     "smooth-scroll": "^16.1.3"
