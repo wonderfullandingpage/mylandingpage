@@ -77,11 +77,11 @@ export const Navigation = ({ theme, setTheme }) => {
               >
                 {theme === "dark" ? (
                   <div onClick={() => setTheme(theme === "dark" ? "white" : "dark")}>
-                    <i class='fa fa-moon-o'></i>
+                    <i class='fa fa-moon-o' style={{ color: "black" }}></i>
                   </div>
                 ) : (
                   <div onClick={() => setTheme(theme === "dark" ? "white" : "dark")}>
-                    <i class='fa fa-sun-o'></i>
+                    <i class='fa fa-sun-o' style={{ color: "black" }}></i>
                   </div>
                 )}
               </div>

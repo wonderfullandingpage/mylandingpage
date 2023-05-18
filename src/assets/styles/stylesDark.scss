@@ -8,7 +8,11 @@
   #portfolio,
   #testimonials,
   #footer {
-    background: $backgroundPrimaryBlack;
+    background-image: url("../images/blurry-gradient2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   #services,
@@ -26,4 +30,8 @@
   li {
     color: $white;
   }
+
+  /*   .fa {
+    color: black;
+  } */
 }
