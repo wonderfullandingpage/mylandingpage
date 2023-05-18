@@ -4,22 +4,22 @@ import InputSimple from "./elements/inputs/input";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useAlert } from "react-alert";
 
-/* const initialState = {
+const initialState = {
   name: "",
   email: "",
   message: "",
 };
- */
+
 export const Contact = (props) => {
   const alert = useAlert();
-  const [{ name, email, message }, setState] = useState(initialState);
+  const [state, setState] = useState(initialState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const clearState = () => setState({ ...initialState });
+  const clearState = () => setState({ ...state });
 
   const handleSubmit = (e) => {
     e.preventDefault();
